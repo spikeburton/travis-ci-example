@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+- 2.6.3
+before_install:
+- rvm install 2.6.3
+- gem install bundler
+install:
+- bundle install
+script:
+- echo "Running tests ..."
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: Z8cuYn2PzhU2mzal9dxIeBrAhK0CZMN/bkfZ0lHuxSOksmXVAnwl5vNt8bu1NS452Wl19Sf7xjzGaisOKhR9wV4e01UlPW+7sWOQoTIc5LmqVKd+J/c7jekBTuq8j4dWoTW0yEic16Ml7fgiuzbSP7cZBa44JIDBE98b0mmNIKRxVuOEKox3EtLNSWnFaGEYh7ya6RRPVddDT6IMNjNVOQJYIgQwPzZskoznmSLiq6lGxLe+q6NolwvpUGu0fGKAbaf/zafAvFCeoUv7wsatqvaBExfriuEW47jfZbdEIDUdkU2sIjzNQ1T6k+d5mk8R8edaG/LDXA/ZstsNMSOb6ZT83z/wWvkU9e8LiUaPrgVvVKqPLgzKvI2VUQY8EQsl8fm1jQFedxEm7/d+HsIsuYa8AACywO2zT+0eB0thpFZ51GzSvGj/B4ohczZHjZvigpAa0bdrnxMTe7RUEK7iWQOxj2zw2lX4RhcPwSx4EpckQ6XewCanwgs2/6IeCxKG6NcjLIKyvet0nO0nwsCBWJyCRn8IbfUi0LxDve7j2COwfuOeyY4mhbKfuI0giUaYbWhUfRBGqXvkxQw1PgCEzxCf+Huk3+xKfqLpYOGC80iUJDxOjhC1gzT3B9H6TOLw8ReihKWNLQjw56RQe2gVubJj9YLh09zC/eovJCaOon0=
+  app: peaceful-reaches-50235
+  on:
+    repo: spikeburton/travis-ci-example
